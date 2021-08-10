@@ -1,4 +1,4 @@
-export const nameValidation = name => {
+export const nameValidation = (name) => {
   if (name.trim() === "") {
     return `Name is required`;
   }
@@ -11,7 +11,7 @@ export const nameValidation = name => {
   return null;
 };
 
-export const emailValidation = email => {
+export const emailValidation = (email) => {
   if (
     /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(
       email
@@ -25,19 +25,20 @@ export const emailValidation = email => {
   return "Please enter a valid email";
 };
 
-export const passValidation = pass => {
+export const passValidation = (pass) => {
   if (pass.trim() === "") {
     return `Password is required`;
   }
   if (pass.trim().length < 0) {
     return `Password is required`;
+    // eslint-disable-next-line no-else-return
   } else if (pass.trim().length < 8) {
     return `Minimum 8 characters`;
   }
   return null;
 };
 
-export const userValidation = userType => {
+export const userValidation = (userType) => {
   if (userType.trim() === "") {
     return `User type is required`;
   }
